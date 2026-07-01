@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Javier MLB</title>
 <!-- APP VERSION — incrementar este número al actualizar -->
-<meta name="app-version" content="3.0">
+<meta name="app-version" content="3.1">
 <!-- PWA: instalar como app nativa -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -535,7 +535,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 // =============================================
 // VERSIÓN — Incrementar al actualizar el archivo
 // =============================================
-const APP_VERSION = '3.0';
+const APP_VERSION = '3.1';
 
 // =============================================
 // PROGRAM DATA
@@ -1213,7 +1213,7 @@ function renderHoy() {
         <div>🟢 Caminata 20-30 min (ritmo conversacional) + foam rolling general</div>
         <div>🦾 Completar el <strong>Protocolo Día 2 (Codo)</strong> del día</div>
         <div>💤 Dormir 9-10 horas — apagar pantallas a las 9 PM</div>
-        <div>🥗 Nutrición: proteína constante 161g · aprox. −200 kcal vs días de entrenamiento</div>
+        <div>🥗 Nutrición: proteína constante 165g · aprox. −200 kcal vs días de entrenamiento</div>
       </div>
     </div>`;
     // continue to render exercises below
@@ -1650,7 +1650,7 @@ const METRICS = [
     {name:'FMS Score Total', key:'fms', unit:'pts', target:'> 14'},
   ]},
   {id:'nutri_met', label:'🥗 Nutrición', data:[
-    {name:'Proteína diaria (g)', key:'protein_g', unit:'g', target:'161+'},
+    {name:'Proteína diaria (g)', key:'protein_g', unit:'g', target:'165+'},
     {name:'Calorías diarias (kcal)', key:'kcal', unit:'kcal', target:'2800-3400'},
     {name:'Hidratación (L/día)', key:'hydro', unit:'L', target:'2.4+'},
     {name:'Horas de sueño', key:'sleep', unit:'hrs', target:'9-10'},
@@ -1665,12 +1665,12 @@ const PERIOD_KEYS = ['base','t1','t2','t3'];
 // Set only if localStorage has no data yet
 (function seedBaseline() {
   const seed = {
-    fisico:      { peso:{base:'161'}, estatura:{base:'159'}, grasa:{base:'—'} },
+    fisico:      { peso:{base:'165'}, estatura:{base:'163'}, grasa:{base:'—'} },
     velocidad:   { s50:{base:'7.63'}, s60:{base:'9.9'} }, // 60-yard dash Jun 2026 = 9.9s (medición 22 jun 2026)
     catcher_met: { pop_avg:{base:'2.20'}, pop_best:{base:'2.10'}, throw_avg:{base:'60'}, throw_max:{base:'65'} },
     fuerza:      {},
     movilidad:   {},
-    nutri_met:   { protein_g:{base:'161'}, kcal:{base:'2800'}, hydro:{base:'2.4'}, sleep:{base:'9'} },
+    nutri_met:   { protein_g:{base:'165'}, kcal:{base:'2800'}, hydro:{base:'2.4'}, sleep:{base:'9'} },
   };
   Object.entries(seed).forEach(([id, rows]) => {
     const storKey = 'javier_metrics_' + id;
@@ -1967,7 +1967,7 @@ const DAILY_MENUS = {
   lunes: {
     type:'training', intensity:'alta',
     label:'Lunes — Fuerza Tren Inferior + Rotacional',
-    kcal:3200, protein:161, carbs:420, fat:85,
+    kcal:3200, protein:165, carbs:420, fat:85,
     focus:'Máxima carga de carbos para soportar volumen de fuerza. Proteína distribuida en 5 tomas.',
     meals:[
       {id:'l1', time:'7:00 AM', name:'🌅 Desayuno — Potencia AM', tag:'',
@@ -2008,7 +2008,7 @@ const DAILY_MENUS = {
   martes: {
     type:'training', intensity:'alta',
     label:'Martes — Velocidad + Agilidad + Potencia',
-    kcal:3100, protein:161, carbs:395, fat:80,
+    kcal:3100, protein:165, carbs:395, fat:80,
     focus:'Carbohidratos de rápida digestión para explosividad. Hidratación máxima.',
     meals:[
       {id:'ma1', time:'7:00 AM', name:'🌅 Desayuno — Velocidad AM', tag:'',
@@ -2048,7 +2048,7 @@ const DAILY_MENUS = {
   miercoles: {
     type:'training', intensity:'media-alta',
     label:'Miércoles — Fuerza Tren Superior + Core',
-    kcal:3100, protein:161, carbs:380, fat:90,
+    kcal:3100, protein:165, carbs:380, fat:90,
     focus:'Proteína prioritaria para síntesis muscular. Grasas saludables para salud articular del hombro.',
     meals:[
       {id:'mi1', time:'7:00 AM', name:'🌅 Desayuno — Fuerza Superior', tag:'',
@@ -2089,7 +2089,7 @@ const DAILY_MENUS = {
   jueves: {
     type:'training', intensity:'media',
     label:'Jueves — Pliométrico + Movilidad + Prevención',
-    kcal:2900, protein:161, carbs:350, fat:85,
+    kcal:2900, protein:165, carbs:350, fat:85,
     focus:'Énfasis en micronutrientes, colágeno y omega-3 para salud articular y tendones.',
     meals:[
       {id:'j1', time:'7:00 AM', name:'🌅 Desayuno — Articulaciones + Energía', tag:'',
@@ -2129,7 +2129,7 @@ const DAILY_MENUS = {
   viernes: {
     type:'training', intensity:'alta',
     label:'Viernes — Potencia + Condicionamiento',
-    kcal:3200, protein:161, carbs:420, fat:85,
+    kcal:3200, protein:165, carbs:420, fat:85,
     focus:'Día de máxima carga de carbohidratos. Preparar el cuerpo para el campo del sábado.',
     meals:[
       {id:'v1', time:'7:00 AM', name:'🌅 Desayuno — Alta Energía Viernes', tag:'',
@@ -2170,7 +2170,7 @@ const DAILY_MENUS = {
   sabado: {
     type:'campo', intensity:'campo',
     label:'Sábado — Campo + Programa de Tiro',
-    kcal:3100, protein:161, carbs:390, fat:82,
+    kcal:3100, protein:165, carbs:390, fat:82,
     focus:'Hidratación MÁXIMA en el campo. Snacks portátiles para mantener energía durante el entrenamiento.',
     meals:[
       {id:'s1', time:'7:00 AM', name:'🌅 Desayuno — Preparación para el Campo', tag:'pre',
@@ -2210,7 +2210,7 @@ const DAILY_MENUS = {
   domingo: {
     type:'recovery', intensity:'baja',
     label:'Domingo — Recuperación + Cuidado del Brazo',
-    kcal:2800, protein:161, carbs:330, fat:90,
+    kcal:2800, protein:165, carbs:330, fat:90,
     focus:'Día antiinflamatorio. Más grasas saludables, menos carbohidratos. Prioridad: sueño y regeneración.',
     meals:[
       {id:'d1', time:'8:00 AM', name:'🌅 Desayuno — Relajado + Nutritivo', tag:'',
@@ -2253,7 +2253,7 @@ const DAILY_MENUS = {
 // Valores aproximados basados en tablas nutricionales estándar
 // =============================================
 const NUTRI_DATA = {
-  // ── LUNES  (metas: P:161g · C:420g · G:85g · 3200kcal) ──────────────────
+  // ── LUNES  (metas: P:165g · C:420g · G:85g · 3200kcal) ──────────────────
   l1_0:[24,3,18,270],  // 4 huevos + espinaca
   l1_1:[10,62,5,335],  // avena + leche + banana
   l1_2:[8,12,8,150],   // leche entera 250ml
@@ -2273,7 +2273,7 @@ const NUTRI_DATA = {
   l5_2:[1,5,10,110],   // ensalada verde + aceite oliva
   l5_3:[8,14,5,133],   // leche con cacao sin azúcar
 
-  // ── MARTES  (metas: P:161g · C:395g · G:80g · 3100kcal) ─────────────────
+  // ── MARTES  (metas: P:165g · C:395g · G:80g · 3100kcal) ─────────────────
   ma1_0:[21,1,15,220], // 3 huevos + 1 clara
   ma1_1:[4,52,2,240],  // 2 tostadas pan blanco + miel + banana
   ma1_2:[2,26,0,112],  // jugo de naranja 250ml
@@ -2292,7 +2292,7 @@ const NUTRI_DATA = {
   ma5_2:[1,6,15,160],  // aguacate en rodajas
   ma5_3:[8,12,2,98],   // leche o yogurt
 
-  // ── MIÉRCOLES  (metas: P:161g · C:380g · G:90g · 3100kcal) ──────────────
+  // ── MIÉRCOLES  (metas: P:165g · C:380g · G:90g · 3100kcal) ──────────────
   mi1_0:[32,2,22,330], // tortilla 4 huevos + queso + pavo
   mi1_1:[10,52,5,295], // avena + leche + arándanos
   mi1_2:[2,26,0,112],  // jugo naranja / kiwi
@@ -2312,7 +2312,7 @@ const NUTRI_DATA = {
   mi5_2:[3,6,3,60],    // brócoli o espinaca
   mi5_3:[8,12,8,150],  // vaso de leche entera
 
-  // ── JUEVES  (metas: P:161g · C:350g · G:85g · 2900kcal) ─────────────────
+  // ── JUEVES  (metas: P:165g · C:350g · G:85g · 2900kcal) ─────────────────
   j1_0:[18,1,15,205],  // 3 huevos
   j1_1:[10,55,5,305],  // avena + leche + mango + cúrcuma
   j1_2:[1,12,0,50],    // naranja / kiwi
@@ -2331,7 +2331,7 @@ const NUTRI_DATA = {
   j5_2:[2,3,3,45],     // espinaca con ajo
   j5_3:[0,0,0,2],      // té manzanilla
 
-  // ── VIERNES  (metas: P:161g · C:420g · G:85g · 3200kcal) ────────────────
+  // ── VIERNES  (metas: P:165g · C:420g · G:85g · 3200kcal) ────────────────
   v1_0:[24,4,20,290],  // 4 huevos + pimiento + cebolla
   v1_1:[16,88,7,482],  // avena + 2 bananas + miel 1.5t
   v1_2:[26,14,4,198],  // batido proteína + leche
@@ -2351,7 +2351,7 @@ const NUTRI_DATA = {
   v5_2:[1,5,0,24],     // ensalada verde
   v5_3:[8,12,8,150],   // leche entera
 
-  // ── SÁBADO  (metas: P:161g · C:390g · G:82g · 3100kcal) ─────────────────
+  // ── SÁBADO  (metas: P:165g · C:390g · G:82g · 3100kcal) ─────────────────
   s1_0:[24,2,18,264],  // 4 huevos
   s1_1:[10,62,5,333],  // arroz con leche / avena + frutas 1.5t
   s1_2:[2,54,0,218],   // 2 bananas
@@ -2370,7 +2370,7 @@ const NUTRI_DATA = {
   s5_2:[3,8,0,44],     // brócoli + zanahoria
   s5_3:[20,8,2,130],   // yogurt griego antes de dormir
 
-  // ── DOMINGO  (metas: P:161g · C:330g · G:90g · 2800kcal) ────────────────
+  // ── DOMINGO  (metas: P:165g · C:330g · G:90g · 2800kcal) ────────────────
   d1_0:[21,7,20,285],  // tortilla 3 huevos + aguacate + tomate
   d1_1:[5,33,7,212],   // 2 tostadas + mantequilla + mermelada
   d1_2:[1,20,0,84],    // frutas variadas
@@ -2517,7 +2517,7 @@ function renderNutri(dayOverride) {
   </div>`;
 
   // MACRO SUMMARY
-  const pPct = Math.round(menu.protein / 1.61); // % of 161g max
+  const pPct = Math.round(menu.protein / 1.65); // % of 165g max
   const cPct = Math.round(menu.carbs / 5);       // % of 500g max
   const fPct = Math.round(menu.fat / 1.2);        // % of 120g max
   html += `<div class="card">
@@ -2626,8 +2626,8 @@ function renderNutri(dayOverride) {
   const curWeek = getCurrentWeek();
   const curPhase = getPhase(curWeek);
   const phaseNutri = {
-    T1:{label:'Fase 1 (Sem 1-12) — Fundamentos',kcal:'2,900-3,200',protein:'161g/día (1g/lb)',carbs:'350-420g','note':'Prioridad: establecer el hábito de 5 comidas/día y cumplir proteína. La calidad nutricional sobre cantidad.'},
-    T2:{label:'Fase 2 (Sem 13-24) — Fuerza',kcal:'3,200-3,500',protein:'161-175g/día',carbs:'380-450g',note:'Mayor demanda de fuerza = mayor necesidad calórica. Aumentar carbos en días de entrenamiento de alta intensidad.'},
+    T1:{label:'Fase 1 (Sem 1-12) — Fundamentos',kcal:'2,900-3,200',protein:'165g/día (1g/lb)',carbs:'350-420g','note':'Prioridad: establecer el hábito de 5 comidas/día y cumplir proteína. La calidad nutricional sobre cantidad.'},
+    T2:{label:'Fase 2 (Sem 13-24) — Fuerza',kcal:'3,200-3,500',protein:'165-175g/día',carbs:'380-450g',note:'Mayor demanda de fuerza = mayor necesidad calórica. Aumentar carbos en días de entrenamiento de alta intensidad.'},
     T3:{label:'Fase 3 (Sem 25-36) — Potencia',kcal:'3,400-3,700',protein:'175-185g/día',carbs:'400-480g',note:'Máximo volumen e intensidad. Carb timing crítico: pre/post entrenamiento. Colágeno 30-60 min antes de cada sesión.'},
   };
   const pn = phaseNutri[curPhase];
@@ -2655,12 +2655,12 @@ function renderNutri(dayOverride) {
   html += `<div class="card">
     <div class="card-title">⚖️ Tracker de Composición Corporal</div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
-      <div class="bench-item"><div class="bench-val" style="color:var(--gold)">${lastComp.weight||'161'}</div><div class="bench-label">Peso (lb)</div></div>
+      <div class="bench-item"><div class="bench-val" style="color:var(--gold)">${lastComp.weight||'165'}</div><div class="bench-label">Peso (lb)</div></div>
       <div class="bench-item"><div class="bench-val" style="color:var(--gold)">${lastComp.bf_pct||'—'}</div><div class="bench-label">% Grasa</div></div>
       <div class="bench-item"><div class="bench-val" style="color:var(--gold)">${lastComp.lean_mass||'—'}</div><div class="bench-label">Masa Magra (lb)</div></div>
     </div>
     <div class="quick-form">
-      <div class="form-row"><label>Peso actual (lb)</label><input type="number" id="bc-weight" placeholder="161" step="0.5" min="80" max="300"></div>
+      <div class="form-row"><label>Peso actual (lb)</label><input type="number" id="bc-weight" placeholder="165" step="0.5" min="80" max="300"></div>
       <div class="form-row"><label>% Grasa corporal</label><input type="number" id="bc-bf" placeholder="22" step="0.5" min="5" max="40"></div>
     </div>
     <button class="save-btn" onclick="saveBodyComp()">💾 Registrar Medición</button>
@@ -3941,8 +3941,8 @@ const SUPPLEMENTS = [
     id:'proteina_suero', name:'Proteína de Suero (Whey)', icon:'🥛', priority:'p1',
     priorityLabel:'Prioridad 1 — Esencial',
     category:'Proteína & Recuperación',
-    benefit:'Alcanzar meta de 161g de proteína/día. Síntesis muscular post-entrenamiento.',
-    why:'Javier necesita 1g/lb = 161g/día. Si la dieta no lo cubre (días de campo, viajes), el whey es la solución más eficiente.',
+    benefit:'Alcanzar meta de 165g de proteína/día. Síntesis muscular post-entrenamiento.',
+    why:'Javier necesita 1g/lb = 165g/día. Si la dieta no lo cubre (días de campo, viajes), el whey es la solución más eficiente.',
     doseFormula:'0.25g × peso (lbs)',
     doseCalc: (lbs) => Math.round(lbs * 0.25) + 'g por toma',
     doseNote:'Solo en días de entrenamiento cuando la dieta no alcanza la meta de proteína.',
@@ -4151,7 +4151,7 @@ const SUPP_DAILY_PROTOCOL = [
   {time:'Cena / Antes dormir', items:'🧲 Magnesio 200mg · 🦠 Probiótico (ciclos de 4-8 semanas)'},
 ];
 
-let suppWeight = ls.get('supp_weight', 161);
+let suppWeight = ls.get('supp_weight', 165);
 
 function renderSuplementos(weightOverride) {
   if (weightOverride !== undefined) suppWeight = weightOverride;
@@ -4185,7 +4185,7 @@ function renderSuplementos(weightOverride) {
     <div style="font-size:13px;font-weight:700;margin-bottom:4px">⚖️ Calculadora de Dosis por Peso</div>
     <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Ajusta el peso y todas las dosis se recalculan automáticamente</div>
     <div style="display:flex;gap:8px;align-items:center">
-      <input type="number" class="supp-calc-input" style="flex:1" value="${suppWeight}" min="50" max="300" id="supp-weight-input" oninput="renderSuplementos(parseInt(this.value)||161)">
+      <input type="number" class="supp-calc-input" style="flex:1" value="${suppWeight}" min="50" max="300" id="supp-weight-input" oninput="renderSuplementos(parseInt(this.value)||165)">
       <span style="font-size:13px;color:var(--muted);font-weight:700">lbs</span>
       <span style="font-size:13px;color:var(--muted)">/</span>
       <span style="font-size:14px;font-weight:800;color:#90CAF9" id="supp-kg-display">${Math.round(suppWeight/2.205)}kg</span>
